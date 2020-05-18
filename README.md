@@ -1,2 +1,2 @@
 # project_SearchEngine
-Repositório devido a um trabalho para a aula de Estrutura de Dados e Algoritmo da faculdade FGV-RJ
+Esse repositório tem como objetivo a implementação do Search Engine para a matéria Estrutura de Dados e Algoritmos. Esse algoritmo tem como objetivo fazer uma busca de palavras usando a estrutura de dados Trie após a limpeza dos documentos que feita em Python. Ao buscarmos a palavra, se a mesma existir, o algoritmo retornará o documento em que contém a palavra procurada, caso contrário, haverá uma sugestão de palavras semelhantes e então buscaremos uma delas.
