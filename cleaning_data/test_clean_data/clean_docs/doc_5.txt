@@ -1,0 +1,7 @@
+deus ex sdk is a software development kit sdk for the computer game deus ex  it allows users to make their own missions for the game  it was released on september   as a free download
+
+ see also 
+ deus ex mods
+
+ external links 
+deus ex sdk experiments  toturials
