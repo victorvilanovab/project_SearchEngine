@@ -3,20 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8d9194ba-3edc-4ff4-9935-701d6e8d1abf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/cleaning_data/clean_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/cleaning_data/clean_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaning_data/test_clean_data/clean_docs/doc_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cleaning_data/test_clean_data/clean_docs/doc_3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaning_data/test_clean_data/clean_docs/doc_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cleaning_data/test_clean_data/clean_docs/doc_4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaning_data/test_clean_data/clean_docs/doc_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cleaning_data/test_clean_data/clean_docs/doc_5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaning_data/test_clean_data/docs/doc_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cleaning_data/test_clean_data/docs/doc_0.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaning_data/test_clean_data/docs/doc_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cleaning_data/test_clean_data/docs/doc_1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaning_data/test_clean_data/docs/doc_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cleaning_data/test_clean_data/docs/doc_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaning_data/test_clean_data/docs/doc_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cleaning_data/test_clean_data/docs/doc_3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaning_data/test_clean_data/docs/doc_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cleaning_data/test_clean_data/docs/doc_4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaning_data/test_clean_data/docs/doc_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cleaning_data/test_clean_data/docs/doc_5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaning_data/test_clean_data/titles_docs/doc_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cleaning_data/test_clean_data/titles_docs/doc_3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaning_data/test_clean_data/titles_docs/doc_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cleaning_data/test_clean_data/titles_docs/doc_4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaning_data/test_clean_data/titles_docs/doc_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cleaning_data/test_clean_data/titles_docs/doc_5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_wiki_files/doc_0_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_wiki_files/doc_3_6.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cleaning_data/clean_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1458">
-              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+            <state relative-caret-position="90">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -60,7 +46,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="736" />
@@ -91,6 +77,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -148,10 +135,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08738548" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08738548" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
@@ -159,7 +145,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3293011" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3293011" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -172,8 +158,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/cleaning_data/clean_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1458">
-          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+        <state relative-caret-position="90">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

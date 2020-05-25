@@ -58,7 +58,7 @@ def remove_empty_lines(filename):
 n_doc=0
 
 path = r'C:\Users\Victor Vilanova\Documents\Search_Engine_Git\project_SearchEngine\cleaning_data\test_clean_data\docs'
-regex = re.compile ('[(),\/.!''?*""]')
+regex = re.compile('[(),\/.!''?*""]')
 #lista dos documentos não limpos
 all_files = glob.glob(os.path.join(path, "*.txt"))
 for i in range(len(all_files)):
@@ -69,7 +69,7 @@ for i in range(len(all_files)):
         clean_document = regex.sub('', clean_document)
         novo_clean_doc.write(clean_document)
         remove_empty_lines(os.path.join(path_clean_docs,"doc_"+str(n_doc))+'.txt')
-        novo_clean_doc.close ()
+        novo_clean_doc.close()
         n_doc+=1
 
 
