@@ -13,7 +13,7 @@ param= {'extra_spaces':False ,  # Remove extra white space
 'punct':True ,# Remove all punctuations
 'stp_lang':'english'}
 
-path = r'C:\Users\Victor Vilanova\Documents\Search_Engine_Git\project_SearchEngine\test_wiki_files'
+path = r'C:\Users\Victor Vilanova\Documents\Search_Engine_Git\project_SearchEngine\cleaning_data\test_wiki_files'
 
 all_files = glob.glob(os.path.join(path, "*.txt"))
 
