@@ -5,7 +5,7 @@
 #include <sstream>
 #include <algorithm>
 #include <chrono>
-#define alpha_size 36
+#define alpha_size 40
 #define CHAR_TO_INDEX(c) ((int)c - (int)'a')
 using namespace std;
 string word;
@@ -185,7 +185,104 @@ char to_lowercase(char c){
 }
 
 int main(){
-
+	Trie trie;
+    int number_doc=0;
+    string doc;
+    string path = "C:\\Users\\Victor Vilanova\\Documents\\Search_Engine_Git\\project_SearchEngine\\cleaning_data\\test_clean_data";
+	ifstream file;
+	auto t1 = std::chrono::steady_clock::now();
+	while( number_doc <= 19 ){
+		file.open(path +"\\clean_docs\\doc_"+to_string(number_doc)+".txt");
+		if (file.is_open()) {
+			if (file.good()) {
+				    while(getline(file, doc)){
+					trie.insert_doc(doc, number_doc);
+					}
+			}
+		}
+		file.close();
+		number_doc+=1;
+	}
+	auto t2 = std::chrono::steady_clock::now();
+    auto duration = chrono::duration <double, milli> (t2 - t1).count();
+    cout << "Time creating the Trie: "<< duration << endl;
+	
+	while(1){
+		cout << "\n";
+        cout << "1. Enter a word to query.\n2.Exit" << '\n';
+        cout << "\n";
+        int ch;
+		cin >> ch;
+		switch (ch)
+        {
+        case 1: {
+            cout << "Enter Word: ";
+            cin >> word;
+            transform(word.begin(), word.end(),word.begin(), ::tolower);
+            cout << "\n";
+            cout << "Searching..." << endl;
+            auto t1 = std::chrono::steady_clock::now();
+            bool search = trie.search_word(word);
+            auto t2 = std::chrono::steady_clock::now();
+            auto duration = chrono::duration <double, milli> (t2 - t1).count();
+            if (search){
+            	cout << "Time of serach : " << duration<< endl;
+            	vector<int> x = trie.search_word_node(word)->documents;
+				string line;
+            	for (int i=0; i<x.size();i++){
+            		ifstream file_doc (path +"/titles_docs/doc_"+to_string(x[i])+".txt");
+            		while (getline(file_doc, line)){
+            		cout << "["<< x[i] << "] = " ;
+					cout << line << endl;
+					}
+            	file_doc.close();
+            	}
+			while(1){
+				cout << "\n";
+				cout << "Do you want to open any of the documents? type(1/0)";
+				cout << "\n";
+				int ch;
+				cin >> ch;
+				switch(ch)
+				{
+				case 1: {
+					cout << "Which of the documents do you want to open? type(number of document)";
+					cout << "\n";
+					int ch;
+					cin >> ch;
+					string line;
+					string title;
+					ifstream file_title (path+"/titles_docs/doc_"+to_string(ch)+".txt");
+					getline(file_title, title);
+					cout << title << endl;
+					ifstream file_doc (path+"/docs/doc_"+to_string(ch)+".txt");
+					while (getline(file_doc, line)){
+					cout << line << endl;
+					}
+				break;
+				}
+				case 0:{
+					break;
+				}
+				default:
+            		cout << "Choice not available." << '\n';
+				}
+				break;
+			}
+		}
+           	break;
+		}
+            	
+        case 2:{
+        	exit(0);
+			break;
+		}
+        
+        default:
+            cout << "Choice not available." << '\n';
+        }
+	}
 	return 9;
 }
+
 
