@@ -1,7 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#define alpha_size 26
+#include <fstream>
+#include <sstream>
+#include <algorithm>
+#include <chrono>
+#define alpha_size 36
 #define CHAR_TO_INDEX(c) ((int)c - (int)'a')
 using namespace std;
 string word;
@@ -14,7 +18,7 @@ struct TrieNode {
 };
 
 // Create and Return a New Trie Node.
-TrieNode *createNode() {
+struct TrieNode *createNode() {
     TrieNode *pNode = new TrieNode;
     pNode->EndOfWord = false;
 
@@ -23,6 +27,8 @@ TrieNode *createNode() {
     }
     return pNode;
 }
+
+
 
 class Trie{
 	public:
@@ -39,7 +45,11 @@ class Trie{
 		init = letter;
 		while (page[letter] != ' ' && letter < page.length()) letter++;
 		end = letter - 1;
-		if (init <= end) insert_word(page.substr(init, end - init + 1), doc);
+		if (init <= end){
+			string word = page.substr(init, end - init + 1);
+			cout << "insertando a palavra :%"+ word +"%" << endl;
+			insert_word(word, doc);
+			}
 		}
 	}
 		
@@ -61,7 +71,11 @@ class Trie{
 	    }
 	    crawl->freq++;  // For the count of word hit count.
 	    crawl->EndOfWord = true;
-	    crawl->documents.push_back(doc);
+	    if (find(crawl->documents.begin(), crawl->documents.end(), doc) != crawl->documents.end()){
+		}
+		else{
+			crawl->documents.push_back(doc);
+		}
 	}
 	
 	// Search for a word in the Dictionary.
@@ -79,6 +93,28 @@ class Trie{
 	    return (crawl != nullptr && crawl->EndOfWord);
 	}
 	
+	TrieNode* search_word_node(string key){
+		TrieNode *crawl = root;
+		TrieNode *null = root;
+	    for (int t = 0; t < key.length(); t++) {
+	        int index = key[t] - 'a';
+	        
+	        if (!crawl->children[index])
+	            return null;
+	        
+	        crawl = crawl->children[index];
+	    }
+	    if (crawl != nullptr && crawl->EndOfWord){
+	    	return crawl;
+	    }
+	    else{
+	    	return null;
+		}
+	}
+	
+	
+	
+	
 	bool isLastNode(TrieNode *root) {
 	    for (int t = 0; t < alpha_size; t++) {
 	        if (root->children[t])
@@ -87,53 +123,7 @@ class Trie{
 	    return true;
 	}
 	
-	void suggestWords(string prefix, TrieNode *root) {
-	    if (root->EndOfWord == true)
-	        cout << prefix << endl;
 	
-	    if (isLastNode(root)) {
-	        return;
-	    }
-	
-	    for (int t = 0; t < alpha_size; t++) {
-	        if (root->children[t]) {
-	            prefix.push_back(97 + t);
-	            suggestWords(prefix, root->children[t]);
-	            prefix.pop_back();
-	        }
-	    }
-	    return;
-	}
-	
-	int autoSuggest(const string query) {
-	    TrieNode *crawl = root;
-	    int level;
-	    int n = query.length();
-	
-	    for (level = 0; level < n; level++) {
-	        int ind = CHAR_TO_INDEX(query[level]);
-	
-	        if (!crawl->children[ind])
-	            return 0;
-	
-	        crawl = crawl->children[ind];
-	    }
-	
-	    bool isWord = (crawl->EndOfWord == true);
-	    bool isLast = isLastNode(crawl);
-	
-	    if (isWord && isLast) {
-	        cout << query << endl;
-	        return -1;
-	    }
-	
-	    if (!isLast) {
-	        string prefix = query;
-	        suggestWords(prefix,crawl);
-	        return 1;
-	    }
-	    return 0;
-	}
 	
 	void printDictionary() {
 	    if (root->EndOfWord)
@@ -170,63 +160,20 @@ class Trie{
 			
 };
 
-int main(){
-	Trie trie;
-    string dictionary[100];
-    int ch;
-    string word;
-
-    while (true)
-    {
-        cout << "\n";
-        cout << "1. Add Word to Dictionary.\n2.Check if a Word is present in the Dictionary.\n3.Get all the words with the given Prefix.\n4.Print the Dicionary.\n5.Exit" << '\n';
-        cout << "\n";
-        cin >> ch;
-
-        switch (ch)
-        {
-        case 1: {
-            cout << "Enter Word: ";
-            cin >> word;
-            trie.insert_word(word, 5);
-            cout << "\n";
-            cout << "Word Inserted !" << '\n';
-            break;
-        }
-        case 2: {
-            cout << "Enter Word: ";
-            cin >> word;
-            cout << "\n";
-            (trie.search_word(word)) ? cout << "Word Found in the Dictionary!" << '\n' : cout << "Word not found in the Dictionary." << '\n';
-            cout << "\n";
-            break;
-        }
-        case 3: {
-            cout << "Enter Prefix: ";
-            cin >> word;
-            cout << "\n";
-            int res = trie.autoSuggest(word);
-            if (res == -1) {
-                cout << "No word other than the Prefix found in the Dictionary." << '\n';
-            } else if (!res) {
-                cout << "No words found with this in the Dictionary." << '\n';
-            }
-            break;
-        }
-        case 4:{
-            trie.printDictionary();
-            break;
-        }
-        case 5:{
-            exit(0);
-            break;
-        }
-        default:{
-            cout << "Choice not available." << '\n';
-            break;
-        }
-    }
+void print(std::vector <int> const &a) {
+   
+   for(int i=0; i < a.size(); i++)
+      std::cout << a.at(i) << endl;
 }
-	return 0;
+
+char to_lowercase(char c){
+	if ( c>= 'A' && c <= 'Z')
+		return c+32;
+	return c;
+}
+
+int main(){
+
+	return 9;
 }
 
