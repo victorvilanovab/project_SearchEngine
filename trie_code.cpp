@@ -28,7 +28,18 @@ struct TrieNode *createNode() {
     return pNode;
 }
 
-
+string removeSpaces(string str)
+{ 
+    for(int i = 0; i < str.size(); ++i)
+    {
+        if (!((str[i] >= 'a' && str[i]<='z')))
+        {
+            str[i] = ' ';
+        }
+    }
+    str.erase(remove(str.begin(), str.end(), ' '), str.end()); 
+    return str; 
+}
 
 class Trie{
 	public:
@@ -47,6 +58,7 @@ class Trie{
 		end = letter - 1;
 		if (init <= end){
 			string word = page.substr(init, end - init + 1);
+			word = removeSpaces(word);
 			cout << "insertando a palavra :%"+ word +"%" << endl;
 			insert_word(word, doc);
 			}
