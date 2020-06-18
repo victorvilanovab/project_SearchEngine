@@ -430,7 +430,7 @@ int main(){
 			}
             if (aux==n_words && intersecao.size() != 0){
             	cout << "Searching..." << endl;
-            	cout << "Time of serach : " << duration << " miliseconds" << endl;
+            	cout << "Time of search : " << duration << " miliseconds" << endl;
             	cout << "We match " << intersecao.size() << " docs for your search." << endl;
             	vector<string> x = intersecao;
 				string line;
