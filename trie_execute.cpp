@@ -12,6 +12,23 @@
 using namespace std;
 string word;
 
+string clean(string line){
+	string temp="";
+	for (int i = 0; i < line.size(); ++i) {
+        if ((line[i] >= 'a' && line[i] <= 'z') || (line[i] >= 'A' && line[i] <= 'Z') || (line[i] == ' ')) {
+            temp = temp + line[i];
+        }
+        else{
+        	if(line[i]=='á' || line[i]=='à' || line [i]=='ã' || line[i]=='â') temp=temp + "a";
+        	if(line[i]=='é' || line[i]=='è' || line [i]=='ê' ) temp=temp + "e";
+        	if(line[i]=='í' || line[i]=='ì' || line [i]=='î' ) temp=temp + "i";
+        	if(line[i]=='ó' || line[i]=='ò' || line [i]=='õ' || line[i]=='ô') temp=temp + "o";
+        	if(line[i]=='ú' || line[i]=='ù' || line [i]=='û' ) temp=temp + "u";
+		}
+    }
+    line=temp;
+    return line;
+}
 
 vector<string> merge(vector<string> a, vector<string> b){
 	vector<string> c;
@@ -73,6 +90,46 @@ class Trie{
 	Trie(){
 	}
 	
+//	void insert_doc(string page, int doc){
+//	int init, end;
+//	int letter = 0;
+//	while (letter < page.length()) {
+//		while (page[letter] == ' ' && letter < page.length()) letter++;
+//		init = letter;
+//		while (page[letter] != ' ' && letter < page.length()) letter++;
+//		end = letter - 1;
+//		if (init <= end){
+//			string word = page.substr(init, end - init + 1);
+//			word = removeSpaces(word);
+//			insert_word(word, doc);
+//			}
+//		}
+//	}
+//		
+//	
+//	
+//	// Insert a word into a Trie.
+//	void insert_word(string key, int doc) {
+//	    TrieNode *crawl = root;
+//	
+//	    for (int t = 0; t < key.length(); t++) {
+//	        int index = key[t] - 'a';
+//	
+//	        if (!crawl->children[index]) {
+//	            crawl->children[index] = createNode();
+//	        }
+//	
+//	        crawl = crawl->children[index];
+//	        // crawl->freq++; Uncomment for Count of every node hit count.
+//	    }
+//	    crawl->freq++;  // For the count of word hit count.
+//	    crawl->EndOfWord = true;
+//	    if (find(crawl->documents.begin(), crawl->documents.end(), doc) != crawl->documents.end()){
+//		}
+//		else{
+//		//	crawl->documents.push_back(doc);
+//		}
+//	}
 	
 	// Insert word with vector
 	void insert_word_vector(string key, vector<string> doc) {
@@ -189,6 +246,77 @@ vector<string> autoSuggest(const string query, vector<string> vetor) {
     return vetor;
 }
 
+	
+	//Serializaçãaaaaaao
+//	void serialization_trie(fstream &file) {
+//	    if (root->EndOfWord){
+//	    vector<string> g1=root->documents;
+//	    file << "$"+word;
+//		if (g1.size() != 1) {
+//		for(int i=0; i < g1.size(); i++){
+//		if(i==0){
+//			file << "[,"+to_string(g1[i])+",";
+//		}
+//		if(i!=0 && i!=g1.size()-1 ){
+//      		file << to_string(g1[i])+",";
+//		}
+//        if(i==g1.size()-1){
+//			file << to_string(g1[i])+",]";
+//		}
+//   		}
+//	}
+//	else {
+//		file << "[,"+to_string(g1[0])+",]";
+//	}
+//   }
+//	
+//	    if (isLastNode(root))
+//	        return;
+//	
+//	    for (int t = 0; t < alpha_size; t++) {
+//	        if (root->children[t]) {
+//	            word.push_back(97 + t);
+//	            serialization_trie(root->children[t], file);
+//	            word.pop_back();
+//	        }
+//	    }
+//	    return;
+//	}
+//	
+//	void serialization_trie(TrieNode *root, fstream &file) {
+//	    if (root->EndOfWord){
+//	    	vector<int> g1=root->documents;
+//	    	file << "$"+word;
+//		if (g1.size() != 1) {
+//	for(int i=0; i < g1.size(); i++){
+//		if(i==0){
+//			file << "[,"+to_string(g1[i])+",";
+//		}
+//		if(i!=0 && i!=g1.size()-1 ){
+//      		file << to_string(g1[i])+",";
+//		}
+//        if(i==g1.size()-1){
+//			file << to_string(g1[i])+",]";
+//		}
+//   }
+//}
+//	else {
+//		file << "[,"+to_string(g1[0])+",]";
+//}
+//	}
+//	
+//	    if (isLastNode(root))
+//	        return;
+//	
+//	    for (int t = 0; t < alpha_size; t++) {
+//	        if (root->children[t]) {
+//	            word.push_back(97 + t);
+//	            serialization_trie(root->children[t], file);
+//	            word.pop_back();
+//	        }
+//	    }
+//	    return;
+//	}
 	
 	void read_serialization(fstream &file){
 	string line;
