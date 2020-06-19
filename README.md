@@ -1,5 +1,5 @@
 # project_SearchEngine
-Esse repositório tem como objetivo a implementação do Search Engine para a matéria Estrutura de Dados e Algoritmos. Esse algoritmo tem como objetivo fazer uma busca de palavras usando a estrutura de dados Trie após a limpeza dos documentos que feita em Python. Ao buscarmos a palavra, se a mesma existir, o algoritmo retornará o documento em que contém a palavra procurada, caso contrário, haverá uma sugestão de palavras semelhantes e então buscaremos uma delas.
+Nosso trabalho consiste na implementação do Search Engine (uma espécie de mini google), cujo objetivo é buscar uma palavra e retornar o documento em que esta palavra está contida.
 
 Requisitos:
 
