@@ -23,4 +23,4 @@ Para rodar o programa:
     
 7. É necessário realizar alterações no código (trie\_execute.cpp), indicando os paths corretos das pastas dos docs, titles e do arquivo de serialização. Assim, alterando os paths locais. Será necessário alterar as variáveis [path_docs], [path_titles] e [path_serialization_file]. O [path_docs] é o caminho onde estará as pastas (docs_p1 e docs_p2); O [path_titles] é o caminho onde estará as pastas (titles_p1 e titles_p2); E, finalmente, [path_serialization_file] é o caminho onde estará armazenado o arquivo (serialization_docs_titles.txt).
     
-8. Bibliotecas que são necessárias para o código (trie_execute.cpp): <iostream>, <vector>, <string>, <fstream>, <sstream>, <algorithm>, <typeinfo>, <chrono> e <iterator>
+8. Bibliotecas que são necessárias para o código (trie_execute.cpp): iostream, vector, string, fstream, sstream, algorithm, typeinfo, chrono e iterator
