@@ -1,6 +1,8 @@
 # project_SearchEngine
 Nosso trabalho consiste na implementação do Search Engine (uma espécie de mini google), cujo objetivo é buscar uma palavra e retornar o documento em que esta palavra está contida.
 
+Vídeo de demonstração: https://www.youtube.com/watch?v=_1jzjf-gYFM&feature=youtu.be&ab_channel=JuliaQueiroz
+
 Requisitos:
 
 Link para download dos documentos necessários para o projeto: https://gvmail-my.sharepoint.com/:f:/g/personal/b39003_fgv_edu_br/EnaiGxh-msxDjfTcPZtGD1AB_CqPiyN78FfUPzdZrqyKGQ?e=eCDvks
